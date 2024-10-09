@@ -36,8 +36,8 @@ public class MessageReceiver
             var receiveResponse = await _sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest{
                 QueueUrl=_queueUrl,
                 MaxNumberOfMessages=10,
-                WaitTimeSeconds=20,
-                VisibilityTimeout=20
+                WaitTimeSeconds=10,
+                VisibilityTimeout=10
             });
             foreach (var message in receiveResponse.Messages)
             {
